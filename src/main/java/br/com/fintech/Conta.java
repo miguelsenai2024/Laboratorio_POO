@@ -22,7 +22,7 @@ public class Conta {
     public void sacar(double valor) {
         validarValor(valor);
         if (valor > saldo) {
-            throw new IllegalStateException("Saldo insuficiente para sacar R$ " + valor);
+            throw new SaldoInsuficienteException(saldo, valor);
         }
         saldo -= valor;
     }
